@@ -58,6 +58,6 @@ const requestScreenshot = () => {
 }
 
 const checkUrl = (url) => {
-    return url.match(/^http(s)?:\/\/.+\.[\w]{2,5}$/);
+    return url.match(/^http(s)?:\/\/.+\.[\w]{2,5}[a-zA-Z/-_\.]$/);
 }
 </script>
