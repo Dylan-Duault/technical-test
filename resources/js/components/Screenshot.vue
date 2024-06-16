@@ -41,6 +41,12 @@ const loading = ref(false);
 
 const requestScreenshot = () => {
     loading.value = true;
+
+    if (!checkUrl(websiteUrl.value)) {
+        loading.value = false;
+        return;
+    }
+
     axios.post(props.screenshotRoute, { url: websiteUrl.value })
         .then(response => {
             websiteImage.value = response.data.image_url;
@@ -49,5 +55,9 @@ const requestScreenshot = () => {
             // Afficher un message via toastr ou autre, solution à voir avec Pierre-Yves
         });
     loading.value = false;
+}
+
+const checkUrl = (url) => {
+    return url.match(/^http(s)?:\/\/.+\.[\w]{2,5}$/);
 }
 </script>
