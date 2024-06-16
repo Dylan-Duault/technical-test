@@ -6,9 +6,16 @@ use Illuminate\Http\Request;
 
 class ScreenshotController extends Controller
 {
+
+    /**
+     *
+     * Website main functionality, take a screenshot of a given URL and return the image URL
+     *
+     * @param  Request  $request
+     * @return array
+     */
     public function takeScreenshot(Request $request)
     {
-
         $url = $request->input('url');
         $filename = md5($url) . '.png';
         $path = public_path('screenshots/' . $filename);
@@ -16,7 +23,6 @@ class ScreenshotController extends Controller
         $command = "../screenshot.sh $url $path $apikey";
         exec($command);
 
-        // Return image url
         return [
             'url' => $this->getImageUrl($filename)
         ];
