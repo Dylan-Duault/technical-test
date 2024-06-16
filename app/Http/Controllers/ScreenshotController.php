@@ -8,6 +8,10 @@ class ScreenshotController extends Controller
 {
     public function takeScreenshot(Request $request)
     {
+        return [
+            'image_url' => 'http://127.0.0.1:8000/screenshots/0edf27c83d4aa4699c0625d27be0e371.png'
+        ];
+
         $url = $request->input('url');
         $filename = md5($url) . '.png';
         $path = public_path('screenshots/' . $filename);
@@ -15,7 +19,14 @@ class ScreenshotController extends Controller
         $command = "../screenshot.sh $url $path $apikey";
         exec($command);
 
-        // Display image
-        return response()->file($path);
+        // Return image url
+        return [
+            'url' => $this->getImageUrl($filename)
+        ];
+    }
+
+    private function getImageUrl($filename)
+    {
+        return url('screenshots/' . $filename);
     }
 }
