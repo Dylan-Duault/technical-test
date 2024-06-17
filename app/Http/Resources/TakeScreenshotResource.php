@@ -24,6 +24,6 @@ class TakeScreenshotResource extends JsonResource
 
     private function getImageUrl(string $md5): string
     {
-        return url('screenshots/' . $md5 . '.png');
+        return url('saved-screenshots/' . $md5 . '.png');
     }
 }
