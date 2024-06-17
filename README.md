@@ -28,5 +28,14 @@ php artisan serve
 
 6. Access the application at `http://localhost:8000`.
 
+## Functionalities
+
+The application allows users to:
+- Take a screenshot of a website by entering a URL.
+  ![home](./public/img/homepage.png)
+
+- View a list of all screenshots taken.
+![list](./public/img/screenshots.png)
+
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
