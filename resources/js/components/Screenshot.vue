@@ -21,7 +21,7 @@
             </div>
             <img v-if="websiteImage" :src="websiteImage" class="img-fluid mt-3" alt="Website Screenshot">
             <div v-if="websiteImage" class="d-flex justify-content-end align-items-center mt-3">
-                <a :href="websiteImage" class="btn btn-primary me-2" target="_blank">Open</a>
+                <a :href="websiteImage" class="btn btn-outline-secondary me-2" target="_blank">Open</a>
                 <a :href="websiteImage" download="screenshot.png" class="btn btn-primary" role="button">Download</a>
             </div>
         </div>
