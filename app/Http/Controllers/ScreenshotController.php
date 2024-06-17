@@ -24,7 +24,7 @@ class ScreenshotController extends Controller
      * @param  Request  $request
      * @return TakeScreenshotResource
      */
-    public function takeScreenshot(Request $request)
+    public function takeScreenshot(Request $request) : TakeScreenshotResource
     {
         $url = $request->input('url');
         $md5 = md5($url);
