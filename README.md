@@ -7,21 +7,20 @@ It is intentionally poorly coded: it does not adhere to the latest coding standa
 The main objective of this project is to allow candidates to review the codebase, identify issues, and propose corrections and improvements.
 
 ## Pre-requisites
-- PHP 8.3
-- Composer
-- npm
+- PHP 8.0 or higher
+- composer
+- node.js and npm
 
 ## Getting Started
 To run the project locally:
 1. Clone the repository to your local machine.
-2. Install dependencies using Composer (`composer install`).
-3. Install dependencies using npm (`npm install`).
-4. Set up your environment variables by copying `.env.example` to `.env` and adding your  [apiflash.com](https://apiflash.com) API key:
-```
-API_FLASH_KEY=your_api_key_here
-```
+2. Install dependencies using Composer (`composer update`).
+3. Install dependencies using npm (`npm install && npm run build`).
+4. Set up your environment variables by copying `.env.example` to `.env` and adding your  [apiflash.com](https://apiflash.com) API key as `API_FLASH_KEY`.
+4. Run `php artisan key:generate`.
+5. Run `php artisan migrate`.
 
-5. Start the server using Artisan:
+6. Start the server using Artisan:
 ```
 php artisan serve
 ```
